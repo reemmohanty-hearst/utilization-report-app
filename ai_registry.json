@@ -1,0 +1,160 @@
+{
+  "schemas": {
+    "i_o_report_only_projects_27_oct_25_02_nov_25_xlsx__worklogs": {
+      "columns": [
+        "Issue Key",
+        "Issue summary",
+        "Logged Hours",
+        "Logged Seconds",
+        "Work date",
+        "User Account ID",
+        "Full name",
+        "Tempo Team",
+        "Team Lead ID",
+        "Program",
+        "Program Manager ID",
+        "Period",
+        "Account Key",
+        "Account Name",
+        "Account Status",
+        "Account Lead ID",
+        "Account Category",
+        "Account Category Type",
+        "Account Customer",
+        "Account Contact ID",
+        "Account Contact External",
+        "Activity Name",
+        "Component",
+        "All Components",
+        "Version Name",
+        "Issue Type",
+        "Issue Status",
+        "Priority",
+        "Project Key",
+        "Project Name",
+        "Epic",
+        "Epic Link",
+        "Work Description",
+        "Parent Key",
+        "Reporter ID",
+        "Assignee ID",
+        "External Hours",
+        "Billable Hours",
+        "Billable Seconds",
+        "Issue Original Estimate Hours",
+        "Issue Original Estimate Seconds",
+        "Issue Remaining Estimate Hours",
+        "Issue Remaining Estimate Seconds",
+        "Billing",
+        "Date created",
+        "Date updated",
+        "Tempo Worklog ID"
+      ],
+      "ts": 1762448674.3295412
+    },
+    "time_tracking_for_i_o_teams_list_report_3_xlsx__page_1": {
+      "columns": [
+        "Created",
+        "Number",
+        "Title",
+        "Service category",
+        "Service function",
+        "Assignment group",
+        "Assigned to",
+        "Closed",
+        "Work Time"
+      ],
+      "ts": 1762448674.200185
+    },
+    "i_o_report_only_projects_20_oct_25_26_oct_25_xlsx__worklogs": {
+      "columns": [
+        "Issue Key",
+        "Issue summary",
+        "Logged Hours",
+        "Logged Seconds",
+        "Work date",
+        "User Account ID",
+        "Full name",
+        "Tempo Team",
+        "Team Lead ID",
+        "Program",
+        "Program Manager ID",
+        "Period",
+        "Account Key",
+        "Account Name",
+        "Account Status",
+        "Account Lead ID",
+        "Account Category",
+        "Account Category Type",
+        "Account Customer",
+        "Account Contact ID",
+        "Account Contact External",
+        "Activity Name",
+        "Component",
+        "All Components",
+        "Version Name",
+        "Issue Type",
+        "Issue Status",
+        "Priority",
+        "Project Key",
+        "Project Name",
+        "Epic",
+        "Epic Link",
+        "Work Description",
+        "Parent Key",
+        "Reporter ID",
+        "Assignee ID",
+        "External Hours",
+        "Billable Hours",
+        "Billable Seconds",
+        "Issue Original Estimate Hours",
+        "Issue Original Estimate Seconds",
+        "Issue Remaining Estimate Hours",
+        "Issue Remaining Estimate Seconds",
+        "Billing",
+        "Date created",
+        "Date updated",
+        "Tempo Worklog ID"
+      ],
+      "ts": 1762819121.941046
+    },
+    "time_tracking_for_i_o_teams_list_report_10_28_xlsx__page_1": {
+      "columns": [
+        "Created",
+        "Number",
+        "Title",
+        "Service category",
+        "Service function",
+        "Assignment group",
+        "Assigned to",
+        "Closed",
+        "Work Time"
+      ],
+      "ts": 1762819122.007361
+    }
+  },
+  "mappings": {
+    "i_o_report_only_projects_27_oct_25_02_nov_25_xlsx__worklogs": {
+      "work_time": "Logged Hours",
+      "person": "Full name",
+      "dept": "Tempo Team"
+    },
+    "time_tracking_for_i_o_teams_list_report_3_xlsx__page_1": {
+      "work_time": "Work Time",
+      "person": "Assigned to",
+      "dept": "Assignment group"
+    },
+    "i_o_report_only_projects_20_oct_25_26_oct_25_xlsx__worklogs": {
+      "work_time": "Logged Hours",
+      "person": "Full name",
+      "dept": "Tempo Team",
+      "date": "Work date"
+    },
+    "time_tracking_for_i_o_teams_list_report_10_28_xlsx__page_1": {
+      "work_time": "Work Time",
+      "person": "Assigned to",
+      "dept": "Assignment group",
+      "date": "Created"
+    }
+  }
+}
