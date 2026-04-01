@@ -946,11 +946,11 @@ def to_excel_with_dashboards(sn_pivot, jira_pivot, combined_pivot) -> bytes:
     bio = io.BytesIO()
     with pd.ExcelWriter(bio, engine="xlsxwriter") as w:
         sn_pivot.sort_values(["Total Hours", "Department/Team", "Person"], ascending=[False, True, True]) \
-            .to_excel(w, "ServiceNow Pivot", index=False)
+            .to_excel(w, sheet_name="ServiceNow Pivot", index=False)
         jira_pivot.sort_values(["Total Hours", "Department/Team", "Person"], ascending=[False, True, True]) \
-            .to_excel(w, "JIRA Pivot", index=False)
+            .to_excel(w, sheet_name="JIRA Pivot", index=False)
         combined_pivot.sort_values(["Total Hours", "Department/Team", "Person"], ascending=[False, True, True]) \
-            .to_excel(w, "Combined Pivot", index=False)
+            .to_excel(w, sheet_name="Combined Pivot", index=False)
     return bio.getvalue()
 
 
