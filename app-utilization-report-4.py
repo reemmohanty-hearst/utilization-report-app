@@ -441,7 +441,8 @@ def detect_columns(df: pd.DataFrame) -> Tuple[Optional[str], Optional[str], Opti
 
 def detect_platform(df: pd.DataFrame) -> str:
     lc = [c.lower() for c in df.columns]
-    j = {"epic", "story", "issue key", "issue id", "sprint", "project key", "logged hours", "tempo team"}
+    j = {"epic", "story", "issue key", "issue id", "work item key", "work item id",
+         "sprint", "project key", "space key", "logged hours", "tempo team"}
     s = {"assignment group", "assigned to", "incident", "problem", "change", "service", "work time"}
     j_score = sum(1 for x in j if x in lc)
     s_score = sum(1 for x in s if x in lc)
@@ -1249,9 +1250,15 @@ if uploaded:
                         work_col = "__hours__"
 
                 # Detect Issue Summary column for SN splitting
+                # NOTE: Tempo renamed "Issue summary" → "Work Item summary" in mid-2026.
+                # We accept both naming conventions so the app works on old and new exports.
                 summary_col = None
                 for c in df.columns:
-                    if c.lower().strip() in ("issue summary", "issuesummary", "summary"):
+                    if c.lower().strip() in (
+                        "issue summary", "issuesummary",
+                        "work item summary", "workitemsummary",
+                        "summary",
+                    ):
                         summary_col = c
                         break
 
