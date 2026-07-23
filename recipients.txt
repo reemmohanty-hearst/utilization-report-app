@@ -1,0 +1,18 @@
+# Weekly Time Utilization Report — stakeholder email list
+# One address per line. Lines starting with # are ignored.
+lklein@hearst.com
+Kris.Smith@hearst.com
+Chris.Burrus@hearst.com
+JShaffer@hearst.com
+Alvin.Autar@hearst.com
+David.Mitchell@hearst.co.uk
+Marty.Monaco@hearst.com
+Cynthia.Hartley-Cisco@hearst.com
+Randy.Lutchna@hearst.com
+Einav.Sharon@hearst.com
+IJones@hearst.com
+Mark.Dowden@hearst.com
+Jason.Crawford@hearst.com
+Charlie.Yi@hearst.com
+Jason.Boulware@hearst.com
+Steven.Craig@hearst.com
