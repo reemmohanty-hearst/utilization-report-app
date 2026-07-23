@@ -1,0 +1,54 @@
+name: Weekly Time Utilization Report
+
+on:
+  schedule:
+    # Every TUESDAY 21:00 UTC = 5:00 PM Eastern in summer (4:00 PM in winter).
+    # Reports on the week that just ended (Mon-Sun).
+    - cron: "0 21 * * 2"
+  workflow_dispatch:
+    inputs:
+      week_start:
+        description: "Backfill week start (YYYY-MM-DD, a Monday). Blank = last week."
+        required: false
+        default: ""
+      dry_run:
+        description: "Dry run (build files, do NOT publish or email)"
+        type: boolean
+        default: false
+
+jobs:
+  publish-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pandas numpy matplotlib requests openpyxl xlsxwriter
+
+      - name: Run weekly utilization report
+        env:
+          ATLASSIAN_EMAIL: ${{ secrets.ATLASSIAN_EMAIL }}
+          ATLASSIAN_API_TOKEN: ${{ secrets.ATLASSIAN_API_TOKEN }}
+          CONFLUENCE_PARENT_PAGE_ID: ${{ secrets.CONFLUENCE_PARENT_PAGE_ID }}
+          TEMPO_API_TOKEN: ${{ secrets.TEMPO_API_TOKEN }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          REPORT_WEEK_START: ${{ github.event.inputs.week_start }}
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '0' }}
+        run: python weekly_utilization_report.py
+
+      - name: Upload charts + Excel + email as run artifacts (audit trail)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: utilization-report-${{ github.run_id }}
+          path: out/
+          retention-days: 90
+
